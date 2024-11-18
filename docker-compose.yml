@@ -1,0 +1,40 @@
+services:
+  backend:
+    tty: true
+    container_name: backend
+    build:
+      context: "./"
+    restart: always
+    command: ["npm", "run", "dev"]
+    ports:
+      - "4000:4000"
+    volumes:
+      - "./:/usr/src/app"
+      - "/usr/src/app/node_modules"
+    depends_on:
+      - postgres
+    networks:
+      - services
+
+  postgres:
+    tty: true
+    container_name: postgres
+    image: postgres:17
+    restart: always
+    ports:
+      - "9999:5432"
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+    volumes:
+      - "postgres:/var/lib/postgresql/data"
+    networks:
+      - services
+
+volumes:
+  postgres: null
+
+networks:
+  services:
+    driver: bridge
+    name: services
