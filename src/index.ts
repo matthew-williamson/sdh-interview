@@ -1,5 +1,4 @@
 import { AppDataSource } from "./data-source";
-import { Example } from "./entity";
 
 (async () => {
   try {
@@ -10,4 +9,6 @@ import { Example } from "./entity";
     console.log("Failed to initialize datasource:", e);
     process.exit(1);
   }
+
+  // Your code here
 })();
