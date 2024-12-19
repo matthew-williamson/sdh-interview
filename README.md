@@ -56,7 +56,6 @@ If there is anything limiting about this configuration for your specific solutio
 
 This project is using npm for managing dependencies. If you need to add additional dependencies, you can do so with `npm install`. **Important**: After installing new dependencies, you must rebuild containers with `docker compose build` in order for them to be available within your environment.
 
-
 ## 🚀 Good luck and have fun!
 
 If you run into any issues with this boilerplate, please reach out to your hiring contact and they will help you resolve it.
